@@ -1,0 +1,131 @@
+[
+  {
+    "id": 1,
+    "name": "Fruity Sobolo Drink",
+    "category": "Drinks",
+    "description": "Premium hibiscus drink infused with fresh fruits for a refreshing taste.",
+    "price": "GHS 15",
+    "image": "sobolo1.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Asana",
+    "category": "Drinks",
+    "description": "Chilled caramelized corn drink, a local favorite.",
+    "price": "GHS 12.00",
+    "image": "Asaana.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Tiger Nut Drink",
+    "category": "Drinks",
+    "description": "Creamy and sweet tiger nut milk, served chilled.",
+    "price": "GHS 15.00",
+    "image": "tigernutDrink.jpeg"
+  },
+  {
+    "id": 7,
+    "name": "Pineapple Ginger",
+    "category": "Drinks",
+    "description": "Perfect blend of sweet pineapple and spicy ginger.",
+    "price": "GHS 15.00",
+    "image": "PineappleGingerDrink.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Watermelon Mint/Ginger",
+    "category": "Drinks",
+    "description": "Refreshing watermelon with a hint of mint and ginger.",
+    "price": "GHS 15.00",
+    "image": "WatermelonMintJuice.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Boabab Drink",
+    "category": "Drinks",
+    "description": "Nutrient-rich baobab fruit drink.",
+    "price": "GHS 18.00",
+    "image": "baobabDrink .jpeg"
+  },
+  {
+    "id": 10,
+    "name": "Egg with Hot Sauce",
+    "category": "Snacks",
+    "description": "Boiled eggs served with our signature spicy hot sauce.",
+    "price": "GHS 5.00",
+    "image": "EggWithHotSauce.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Agbeli Kaklo",
+    "category": "Snacks",
+    "description": "Traditional roasted corn and groundnut snack.",
+    "price": "GHS 10.00",
+    "image": "AgbeliKaklo.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Plantain Chips",
+    "category": "Snacks",
+    "description": "Crispy and savory fried plantain slices.",
+    "price": "GHS 10.00",
+    "image": "plantainChips.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Coconut Toffee",
+    "category": "Snacks",
+    "description": "Sweet and crunchy caramelized coconut treats.",
+    "price": "GHS 8.00",
+    "image": "coconutToffee.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Chinchin (Atsomor)",
+    "category": "Snacks",
+    "description": "Crunchy fried dough bits, perfect for snacking.",
+    "price": "GHS 10.00",
+    "image": "atsomo.webp"
+  },
+  {
+    "id": 15,
+    "name": "Flour Chips",
+    "category": "Snacks",
+    "description": "Crispy seasoned flour chips.",
+    "price": "GHS 8.00",
+    "image": "flourChips.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Coated Groundnut",
+    "category": "Snacks",
+    "description": "Peanuts coated in a sweet, crunchy flour shell.",
+    "price": "GHS 10.00",
+    "image": "coatedNuts.webp"
+  },
+  {
+    "id": 17,
+    "name": "Nkatie Cake",
+    "category": "Snacks",
+    "description": "Traditional peanut brittle made with sugar.",
+    "price": "GHS 8.00",
+    "image": "nkatieCake.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Adunle",
+    "category": "Snacks",
+    "description": "Sweet local delicacy made from corn and groundnut.",
+    "price": "GHS 10.00",
+    "image": "adunle.jpeg"
+  },
+  {
+    "id": 19,
+    "name": "Spring Rolls",
+    "category": "Snacks",
+    "description": "Delicious spring rolls. Also available for event bookings!",
+    "price": "GHS 20.00",
+    "image": "springRolls.jpg",
+    "bookable_for_events": true
+  }
+]
