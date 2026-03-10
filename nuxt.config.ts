@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     head: {
       title: 'Excellent Cuizine - Fresh Drinks & Snacks',
       meta: [
-        { name: 'description', content: 'Premium fruity drinks, local beverages, and delicious snacks from Excellent Cuizine. Book for events and diet consultancy.' }
+        { name: 'description', content: 'Premium fruity drinks, local beverages, and delicious snacks from Excellent Cuizine. Book for events and diet consultancy.' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' }
       ],
       link: [
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

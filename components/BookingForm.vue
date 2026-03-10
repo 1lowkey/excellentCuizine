@@ -69,12 +69,28 @@ const isSubmitted = ref(false)
 
 const handleSubmit = async () => {
   try {
-    const response = await $fetch('/api/bookings', {
+    // 1. Send to Backend (Keep for records)
+    await $fetch('/api/bookings', {
       method: 'POST',
       body: formData.value
     })
-    console.log('Form submitted:', response)
+
+    // 2. Prepare WhatsApp Message
+    const whatsappNumber = '233501524186'
+    const message = `*New Booking Request - Excellent Cuizine*%0A%0A` +
+      `*Name:* ${formData.value.name}%0A` +
+      `*Email:* ${formData.value.email}%0A` +
+      `*Phone:* ${formData.value.phone}%0A` +
+      `*Type:* ${formData.value.bookingType}%0A` +
+      `*Message:* ${formData.value.message}`
+
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`
+
+    // 3. Trigger Submission State
     isSubmitted.value = true
+
+    // 4. Redirect to WhatsApp
+    window.open(whatsappUrl, '_blank')
 
     // Reset form after 5 seconds
     setTimeout(() => {

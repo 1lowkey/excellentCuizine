@@ -224,6 +224,36 @@ const snacks = computed(() => products.value?.filter(p => p.category === 'Snacks
     line-height: 1.1;
 }
 
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.25rem;
+        margin: 1rem 0;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    .section-padding {
+        padding: 4rem 1rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero-image-wrapper {
+        height: 350px !important;
+        border-radius: 16px;
+    }
+
+    .hero-img {
+        object-position: center 15%;
+        /* Focus on the face/top part of the image */
+    }
+}
+
 .highlight {
     color: var(--primary);
 }
