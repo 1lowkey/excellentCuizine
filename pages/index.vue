@@ -68,16 +68,6 @@
                             <ProductCard v-for="product in snacks" :key="product.id" :product="product" />
                         </div>
                     </div>
-
-                    <div v-if="selectedCategory === 'All' || selectedCategory === 'Snacks'"
-                        class="category-section mt-5">
-                        <div class="category-header">
-                            <h3>Local & Foreign Snacks</h3>
-                        </div>
-                        <div class="product-grid">
-                            <ProductCard v-for="product in snacks" :key="product.id" :product="product" />
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
