@@ -119,17 +119,11 @@
 </template>
 
 <script setup>
-const products = ref([])
+import productsData from '~/data/products.json'
+
+const products = ref(productsData)
 const selectedCategory = ref('All')
 const categories = ['All', 'Drinks', 'Snacks']
-
-const { data: fetchedProducts } = await useFetch('/api/products')
-
-onMounted(() => {
-    if (fetchedProducts.value) {
-        products.value = fetchedProducts.value
-    }
-})
 
 const drinks = computed(() => products.value?.filter(p => p.category === 'Drinks') || [])
 const snacks = computed(() => products.value?.filter(p => p.category === 'Snacks') || [])
