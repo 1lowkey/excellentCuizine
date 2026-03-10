@@ -1,8 +1,7 @@
 <template>
-  <div class="product-card fade-in" :class="{ 'fashion-card': product.category === 'Fashion' }">
+  <div class="product-card fade-in">
     <div class="product-image">
-      <img :src="imgUrl" :alt="product.name" class="product-img"
-        :class="{ 'fashion-img': product.category === 'Fashion' }">
+      <img :src="imgUrl" :alt="product.name" class="product-img">
 
       <div class="image-overlay">
         <span class="category-tag">{{ product.category }}</span>
@@ -13,16 +12,6 @@
       <p>{{ product.description }}</p>
       <div class="product-footer">
         <span class="price">{{ product.price }}</span>
-        <div class="order-controls">
-          <div class="qty-selector">
-            <button @click="qty = Math.max(1, qty - 1)" class="qty-btn" :disabled="qty <= 1">−</button>
-            <span class="qty-value">{{ qty }}</span>
-            <button @click="qty++" class="qty-btn">+</button>
-          </div>
-          <button @click="handleAddToCart" class="btn-add" :class="{ 'added': isAdded }">
-            {{ isAdded ? 'Added! ✓' : 'Add' }}
-          </button>
-        </div>
       </div>
     </div>
   </div>
@@ -36,25 +25,12 @@ const props = defineProps({
   }
 })
 
-const { addToCart } = useCart()
-const qty = ref(1)
-const isAdded = ref(false)
-
 const imgUrl = computed(() => {
   if (!props.product.image) return '/restOwner.jpg'
   return props.product.image.startsWith('http') || props.product.image.startsWith('data:')
     ? props.product.image
     : '/' + props.product.image
 })
-
-const handleAddToCart = () => {
-  addToCart(props.product, qty.value)
-  isAdded.value = true
-  setTimeout(() => {
-    isAdded.value = false
-    qty.value = 1
-  }, 2000)
-}
 </script>
 
 <style scoped>
@@ -76,7 +52,6 @@ const handleAddToCart = () => {
 
 .product-image {
   height: 250px;
-  /* Increased from 220px to show more content */
   background: var(--surface);
   position: relative;
   overflow: hidden;
@@ -154,78 +129,6 @@ const handleAddToCart = () => {
   white-space: nowrap;
 }
 
-.order-controls {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.qty-selector {
-  display: flex;
-  align-items: center;
-  background: var(--surface);
-  border-radius: 20px;
-  padding: 0.15rem;
-  border: 1px solid #e2e8f0;
-}
-
-.qty-btn {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: none;
-  background: white;
-  color: var(--secondary);
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  font-size: 1rem;
-}
-
-.qty-btn:hover:not(:disabled) {
-  background: var(--primary);
-  color: white;
-}
-
-.qty-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.qty-value {
-  width: 18px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 0.8rem;
-  margin: 0 0.1rem;
-}
-
-.btn-add {
-  background: var(--secondary);
-  color: white;
-  border: none;
-  padding: 0.35rem 0.7rem;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: var(--transition);
-  min-width: 50px;
-}
-
-.btn-add:hover {
-  background: var(--primary);
-  transform: scale(1.02);
-}
-
-.btn-add.added {
-  background: #10b981;
-}
-
 @media (max-width: 640px) {
   .product-card {
     border-radius: 12px;
@@ -253,51 +156,11 @@ const handleAddToCart = () => {
     font-size: 0.85rem;
   }
 
-  .order-controls {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    gap: 0.3rem;
-  }
-
-  .qty-selector {
-    justify-content: space-between;
-    padding: 0.1rem;
-  }
-
-  .qty-btn {
-    width: 20px;
-    height: 20px;
-  }
-
-  .btn-add {
-    width: 100%;
-    padding: 0.3rem;
-    font-size: 0.75rem;
-  }
-
   .category-tag {
     padding: 0.1rem 0.4rem;
     font-size: 0.6rem;
     top: 0.5rem;
     left: 0.5rem;
-  }
-}
-
-/* Fashion Specific Styling */
-.fashion-card .product-image {
-  height: 450px;
-  /* Significantly increased for full-length visibility */
-}
-
-.fashion-img {
-  object-position: center 10%;
-  /* Show more of the body while keeping the head */
-}
-
-@media (max-width: 640px) {
-  .fashion-card .product-image {
-    height: 320px;
   }
 }
 </style>

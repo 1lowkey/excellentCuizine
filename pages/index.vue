@@ -69,13 +69,13 @@
                         </div>
                     </div>
 
-                    <div v-if="selectedCategory === 'All' || selectedCategory === 'Fashion'"
+                    <div v-if="selectedCategory === 'All' || selectedCategory === 'Snacks'"
                         class="category-section mt-5">
-                        <div v-if="fashion.length > 0" class="category-header">
-                            <h3>Fashion & Apparel</h3>
+                        <div class="category-header">
+                            <h3>Local & Foreign Snacks</h3>
                         </div>
-                        <div v-if="fashion.length > 0" class="product-grid">
-                            <ProductCard v-for="product in fashion" :key="product.id" :product="product" />
+                        <div class="product-grid">
+                            <ProductCard v-for="product in snacks" :key="product.id" :product="product" />
                         </div>
                     </div>
                 </div>
@@ -114,20 +114,25 @@
             </div>
         </section>
 
-        <!-- Shopping Cart -->
-        <CartDrawer />
+        <!-- Shopping Cart Removed -->
     </main>
 </template>
 
 <script setup>
-const { data: products } = await useFetch('/api/products')
-
+const products = ref([])
 const selectedCategory = ref('All')
-const categories = ['All', 'Drinks', 'Snacks', 'Fashion']
+const categories = ['All', 'Drinks', 'Snacks']
+
+const { data: fetchedProducts } = await useFetch('/api/products')
+
+onMounted(() => {
+    if (fetchedProducts.value) {
+        products.value = fetchedProducts.value
+    }
+})
 
 const drinks = computed(() => products.value?.filter(p => p.category === 'Drinks') || [])
 const snacks = computed(() => products.value?.filter(p => p.category === 'Snacks') || [])
-const fashion = computed(() => products.value?.filter(p => p.category === 'Fashion') || [])
 </script>
 
 <style scoped>

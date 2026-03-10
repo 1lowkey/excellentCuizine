@@ -6,7 +6,7 @@
           <span class="logo-text">Excellent</span>
           <span class="logo-accent">Cuizine</span>
         </NuxtLink>
-        <p class="footer-tagline">Providing fresh, nutritious, and delicious local beverages and snacks since 2024.</p>
+        <p class="footer-tagline">Providing fresh, nutritious, and delicious local beverages and snacks since 2020.</p>
       </div>
 
       <div class="footer-links">
@@ -20,8 +20,8 @@
 
       <div class="footer-contact">
         <h3>Contact Us</h3>
-        <p>Email: hello@excellentcuizine.com</p>
-        <p>Phone: +233 (0) 123 456 789</p>
+        <p>Email: asarepatience305@gmail.com</p>
+        <p>Phone: +233 (0) 501 524 186</p>
         <p>Location: Accra, Ghana</p>
       </div>
     </div>
